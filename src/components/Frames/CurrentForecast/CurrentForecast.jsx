@@ -1,7 +1,9 @@
 import { useState, useEffect, memo } from 'react';
+import { CLOWNSSTYLES } from '../../../utils/types';
 import MainInfo from '../../MainInfo/MainInfo';
 import Temperature from '../../Temperature/Temperature';
 import './CurrentForecast.scss'
+
 
 function CurrentForecast({ forecast, city, country }) {
 
@@ -19,6 +21,8 @@ function CurrentForecast({ forecast, city, country }) {
         }
     }, [])
 
+    const iconID = forecast.weather[0].icon.slice(0, 2);
+
     return (
         <div className='current-forecast'>
             <div className='city'>
@@ -35,7 +39,10 @@ function CurrentForecast({ forecast, city, country }) {
                     wind={forecast.wind}
                     weather={forecast.weather} />
             </div>
-            <img className='zont' src={require('../../../assets/pngegg.webp')} />
+            <img
+                className='zont'
+                style={CLOWNSSTYLES[iconID]}
+                src={require(`../../../assets/clowns/${iconID}.png`)} />
         </div>
     );
 }

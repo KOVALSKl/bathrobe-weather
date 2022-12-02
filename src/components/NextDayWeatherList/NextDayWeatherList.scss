@@ -16,17 +16,35 @@
     }
 
     &.empty {
-        bottom: 100px;
+        overflow-x: unset;
     }
 
     &.empty > li {
+        position: relative;
         color: #ffffff;
+    }
 
-        font-size: 50px;
+    &.empty > li > img {
+        position: absolute !important;
+        right: 0 !important;
+        left: -60px;
+        z-index: 0;
+    }
+
+    &.empty > li > span {
+        width: 200px;
+
+        font-size: 20px;
         font-weight: 500;
+
+        position: absolute;
+        top: 250px;
+        left: 70px;
+
+        color: rgba(pink, 1);
     }
 
     &.fullfield {
-        bottom: 20px;
+        bottom: 60px;
     }
 }

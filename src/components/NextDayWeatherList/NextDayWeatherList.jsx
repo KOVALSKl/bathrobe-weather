@@ -1,3 +1,4 @@
+import { CLOWNSSTYLES } from '../../utils/types';
 import NextDayWeather from '../Frames/NextDayWeather/NextDayWeather';
 import './NextDayWeatherList.scss'
 
@@ -14,7 +15,12 @@ function NextDayWeatherList({ forecastList, type }) {
             }}
         >
             {isEmpty
-                ? <li>No data</li>
+                ? <li className='no-data'>
+                    <img
+                        style={CLOWNSSTYLES['no_data']}
+                        src={require('../../assets/clowns/no_data.png')} />
+                    <span>The day is over Bunny</span>
+                </li>
                 :
                 forecastList.list.map((item, index) => {
                     return (

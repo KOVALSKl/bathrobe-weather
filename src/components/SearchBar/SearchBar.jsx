@@ -19,7 +19,7 @@ function SearchBar() {
         >
             <img
                 className='search-bar__icon'
-                src={require('../../assets/search.svg').default}
+                src={require('../../assets/icons/search.svg').default}
             />
             <input
                 className='search-bar__input'

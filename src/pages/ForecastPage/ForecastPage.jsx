@@ -1,14 +1,13 @@
-import { skipToken } from "@reduxjs/toolkit/dist/query";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
-import { PageType } from "../../utils/types";
+import { CLOWNSSTYLES, PageType } from "../../utils/types";
 import CurrentForecast from "../../components/Frames/CurrentForecast/CurrentForecast";
 import NextDayWeatherList from "../../components/NextDayWeatherList/NextDayWeatherList";
-import { useGetCurrentWeatherQuery, useGetWeatherForecastQuery } from "../../redux/api/weatherApi";
 
-function ForecastPage({ cnt, type }) {
+import './ForecastPage.scss'
 
-    const place = useSelector(state => state.search.value);
+function ForecastPage({ type }) {
+
     const [forecast, setForecast] = useState([]);
 
     const forecastSlice = useSelector(state => state.currentforecast.value);
@@ -43,6 +42,11 @@ function ForecastPage({ cnt, type }) {
                         ...forecastSlice,
                         list: (rightForecasts.length > 4) ? rightForecasts.splice(0, 4) : rightForecasts
                     })
+                    break;
+                default:
+                    setForecast({
+                        ...forecastSlice
+                    })
             }
         }
     }, [forecastSlice, type])
@@ -50,17 +54,27 @@ function ForecastPage({ cnt, type }) {
     const loading = !forecast || !forecast.list || !weatherSlice;
 
     return (
-        (loading)
-            ? <span>Loading...</span>
-            : <div className='today page'>
-                <CurrentForecast
-                    forecast={weatherSlice}
-                    city={forecast.city.name}
-                    country={forecast.city.country} />
-                <NextDayWeatherList
-                    forecastList={forecast}
-                    type={type} />
-            </div>
+        <div className={['today page', (loading) ? 'loading' : 'loaded'].join(' ')}>
+            {(loading)
+                ? <div className="loader">
+                    <img
+                        style={CLOWNSSTYLES['loading']}
+                        src={require('../../assets/clowns/loading.png')}
+                    />
+                    <span>Loading...</span>
+                </div>
+                :
+                <div>
+                    <CurrentForecast
+                        forecast={weatherSlice}
+                        city={forecast.city.name}
+                        country={forecast.city.country} />
+                    <NextDayWeatherList
+                        forecastList={forecast}
+                        type={type} />
+                </div>
+            }
+        </div>
     );
 }
 

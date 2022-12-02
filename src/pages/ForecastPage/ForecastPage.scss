@@ -1,0 +1,48 @@
+.today.page {
+    &.loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+        & > span {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        & > img {
+            animation: sultanEzdit infinite ease-in-out 2s;
+        }
+    }
+}
+
+@keyframes sultanEzdit {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(25px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    75% {
+        transform: translateX(-25px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}

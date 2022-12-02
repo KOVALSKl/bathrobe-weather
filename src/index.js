@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 
 import {
@@ -22,9 +22,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route index={true} element={<ForecastPage type={PageType.TODAY} cnt={8} />} />
-          <Route path='tomorrow' element={<ForecastPage type={PageType.TOMORROW} cnt={16} />} />
-          <Route path='days' element={<ForecastPage type={PageType.DAYS} cnt={37} />} />
+          <Route index={true} element={<ForecastPage type={PageType.TODAY} />} />
+          <Route path='tomorrow' element={<ForecastPage type={PageType.TOMORROW} />} />
+          <Route path='days' element={<ForecastPage type={PageType.DAYS} />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -7,7 +7,6 @@ import { useGetCurrentWeatherQuery, useGetWeatherForecastQuery } from './redux/a
 import { useDispatch, useSelector } from 'react-redux';
 import { updateForecast } from './redux/slices/currentForecastSlice';
 import { updateWeather } from './redux/slices/currentWeatherSlice';
-import { skipToken } from '@reduxjs/toolkit/dist/query';
 
 function App() {
 
@@ -31,7 +30,7 @@ function App() {
     if (weather.data) {
       dispatch(updateWeather(weather.data));
     }
-  })
+  }, [weather.data])
 
 
   return (
