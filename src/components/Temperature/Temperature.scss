@@ -1,0 +1,31 @@
+.temperature {
+    & {
+        width: 130px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 20px;
+
+        border-radius: 30px;
+
+        background: rgb(97 99 112 / 40%);
+
+        box-shadow: 0px 1px 4px rgba(#000, 0.4);
+    }
+
+    & .current-temp {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    & .temp-info {
+        &__item {
+            font-weight: 500;
+            font-size: 16px;
+
+            color: rgba(#fff, 0.7);
+        }
+    }
+}

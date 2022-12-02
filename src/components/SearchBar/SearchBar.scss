@@ -1,0 +1,33 @@
+.search-bar {
+    & {
+        width: 300px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+
+        background: transparent;
+
+        padding: 14px 30px;
+
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 45px;
+    }
+
+    &__input {
+        width: 100%;
+
+        background: transparent;
+        border: none;
+        outline: none;
+
+        color: #ffffff;
+
+        font-size: 18px;
+    }
+
+    &__input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}

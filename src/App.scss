@@ -1,0 +1,50 @@
+.App {
+  & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    background: url("./assets/cloudy_960.jpeg") center center no-repeat;
+    background-size: cover;
+
+    padding: 15px;
+
+    min-height: 730px;
+    height: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  & .page {
+    width: 345px;
+  }
+
+  & .navigation-links {
+    & {
+      width: 345px;
+
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 25px;
+    }
+
+    & > a,
+    & > a:link,
+    & > a:visited {
+      text-decoration: none;
+
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    & > a.active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}

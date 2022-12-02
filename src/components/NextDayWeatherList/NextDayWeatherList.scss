@@ -1,0 +1,32 @@
+.hourly-forecast {
+    & {
+        width: 340px;
+
+        display: flex;
+        gap: 10px;
+
+        overflow-x: scroll;
+
+        margin: 0;
+        list-style-type: none;
+
+        padding: 5px 2px 15px 2px;
+
+        position: absolute;
+    }
+
+    &.empty {
+        bottom: 100px;
+    }
+
+    &.empty > li {
+        color: #ffffff;
+
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    &.fullfield {
+        bottom: 20px;
+    }
+}

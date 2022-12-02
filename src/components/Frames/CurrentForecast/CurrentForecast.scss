@@ -1,0 +1,72 @@
+.current-forecast {
+    & {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        color: #ffffff;
+
+        position: relative;
+    }
+
+    & .zont {
+        height: 300px;
+
+        position: absolute;
+        top: 50px;
+        right: -60px;
+    }
+
+    & .city {
+        & {
+            font-size: 2rem;
+            font-weight: 600;
+
+            position: relative;
+        }
+
+        & sup {
+            background: rgba(0, 0, 200, 0.7);
+            padding: 2px 3px;
+            border-radius: 7px;
+            margin-left: 3px;
+            font-size: 16px;
+        }
+
+        & .current-date {
+            color: rgba(#fff, 0.8);
+
+            font-size: 20px;
+            font-weight: 500;
+
+            position: absolute;
+            left: 0;
+            top: 35px;
+        }
+    }
+
+    & .forecast-info {
+        & {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        & .temp-info {
+            display: flex;
+            flex-direction: column;
+
+            & .current-temp {
+                font-size: 40px;
+                font-weight: 500;
+            }
+
+            & .feels_like {
+                font-size: 14px;
+                font-weight: 500;
+
+                color: rgba(#fff, 0.7);
+            }
+        }
+    }
+}
